@@ -1,0 +1,10 @@
+# Dependencies and build output: large and re-creatable, never commit these
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+.env*
+.env.local
+!.env.example
