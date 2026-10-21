@@ -92,3 +92,15 @@ As an officer, I want to scan tickets at the door.
 - All tests pass, including the security tests.
 - A person has reviewed the code against this spec.
 - The docs and the spec match the shipped behavior.
+
+#11. Part B1
+- Build story 3: Buy tickets.
+- No real payments. Where the spec says to charge a card, use a
+  "Simulated payment" button and list real payments as a non-goal in
+  the README.
+- No sign-in provider. Where the spec needs a signed-in user, use a
+  name typed into a text box and list real authentication as a
+  non-goal.
+- No database. Keep data in memory on the server and say in the README
+  that it resets on every deploy.
+
