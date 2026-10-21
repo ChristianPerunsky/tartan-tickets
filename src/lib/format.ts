@@ -24,6 +24,14 @@ export function formatPrice(priceCents: number): string {
   return `$${(priceCents / 100).toFixed(2)}`;
 }
 
+// Countdown shown while seats are held: 9:42, 0:05, 0:00.
+export function formatCountdown(msLeft: number): string {
+  const totalSeconds = Math.max(0, Math.ceil(msLeft / 1000));
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = String(totalSeconds % 60).padStart(2, "0");
+  return `${minutes}:${seconds}`;
+}
+
 export function formatSeats(seatsRemaining: number): string {
   if (seatsRemaining === 0) return "Sold out";
   return seatsRemaining === 1 ? "1 seat left" : `${seatsRemaining} seats left`;

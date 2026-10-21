@@ -1,5 +1,6 @@
 import type { EventView } from "../lib/events";
 import { formatEventDate, formatPrice, formatSeats } from "../lib/format";
+import { BuyForm } from "./BuyForm";
 
 // All officer-entered text (title, location) is rendered as normal React text
 // children, which React escapes automatically, so a "<script>" in a title shows
@@ -30,16 +31,14 @@ function EventCard({ event }: { event: EventView }) {
           <dd className={soldOut ? "sold-out" : undefined}>{formatSeats(event.seats_remaining)}</dd>
         </div>
       </dl>
-      {/* Sold out: "Join waitlist" replaces "Buy". These buttons are visible but
-          not wired up yet; buying is Story 3 and the waitlist is Story 4. */}
+      {/* Sold out: "Join waitlist" replaces "Buy". Buying works (Story 3); the
+          waitlist button is visible but not wired up yet (Story 4). */}
       {soldOut ? (
         <button type="button" className="button" aria-label={`Join waitlist for ${event.title}`}>
           Join waitlist
         </button>
       ) : (
-        <button type="button" className="button" aria-label={`Buy tickets for ${event.title}`}>
-          Buy
-        </button>
+        <BuyForm eventId={event.event_id} title={event.title} seatsRemaining={event.seats_remaining} />
       )}
     </li>
   );

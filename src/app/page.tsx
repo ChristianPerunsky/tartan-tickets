@@ -1,4 +1,5 @@
 import { EventList } from "../components/EventList";
+import { NameBox } from "../components/NameBox";
 import { listUpcomingEvents } from "../lib/events";
 import { getEventStore } from "../lib/store";
 
@@ -11,9 +12,11 @@ export default async function Page() {
   return (
     <>
       <h1>Upcoming events</h1>
+      <NameBox />
       <EventList events={events} />
       <p className="note">
-        Demo build: Buy and Join waitlist are shown but not wired up yet (Stories 3 and 4).
+        Demo build: payments are simulated, your name is not verified, and Join waitlist is not
+        wired up yet (Story 4).
       </p>
     </>
   );

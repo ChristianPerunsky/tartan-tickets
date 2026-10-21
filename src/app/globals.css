@@ -118,3 +118,92 @@ h1 {
   margin-top: 2rem;
   font-size: 0.9rem;
 }
+
+/* ---- Story 3: buying ---- */
+
+/* Disabled buttons (after the first Buy click, or while a payment is in flight). */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Secondary button: accent text on the surface color (that pair is contrast-tested). */
+.button-secondary {
+  background: var(--surface);
+  color: var(--accent);
+}
+
+.name-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.name-box input,
+.buy-form select {
+  font: inherit;
+  color: var(--ink);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 0.375rem;
+  padding: 0.35rem 0.5rem;
+}
+
+.buy-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-top: auto;
+}
+
+.buy-form .button {
+  margin-top: 0;
+}
+
+.note-inline {
+  font-size: 0.9rem;
+}
+
+.problem,
+.alert {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--ink);
+  border-left: 4px solid var(--accent);
+  padding-left: 0.75rem;
+}
+
+.alert p {
+  margin: 0 0 0.5rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.actions .button {
+  margin-top: 0;
+}
+
+.countdown {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.tickets {
+  padding-left: 1.25rem;
+}
+
+.ticket-code {
+  overflow-wrap: anywhere; /* long codes wrap instead of overflowing small screens */
+}
+
+.link {
+  color: var(--accent);
+}
